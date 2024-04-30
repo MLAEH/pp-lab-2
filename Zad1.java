@@ -9,9 +9,16 @@ public class Zad1 {
         String przedmiot;
         System.out.print("Podaj nazwę przedmiotu:");
         przedmiot=wczytaj.nextLine();
+        System.out.println("Wpisz 0 jesli chcesz przestac wpisywac oceny");
         do {
             System.out.print("Podaj ocene:");
             oceny[i] = wczytaj.nextInt();
+            
+            if(oceny[i]>6 || oceny[i]<0){
+                System.out.println("Podałeś źłą ocene");
+                continue;
+            }
+            
             i++;
             o++;
         } while(i < oceny.length && oceny[i - 1] != 0);
